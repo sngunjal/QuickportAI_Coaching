@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Quickport AI | The Evening Reply Fix for Mumbai Tuition Centres</title>
+  
+  <!-- Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deepGreen: '#0F2A22',
+            deepGreenDark: '#081712',
+            deepGreenLight: '#163A30',
+            offWhite: '#F4F2EC',
+            limeHighlight: '#C8F26B',
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          borderRadius: {
+            '24': '24px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Prevent sideways scrolling on mobile */
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      background-color: #F4F2EC;
+      color: #0F2A22;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Marquee Animation */
+    @keyframes marquee-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .animate-marquee-left {
+      display: flex;
+      width: 200%;
+      animation: marquee-left 24s linear infinite;
+    }
+    .animate-marquee-right {
+      display: flex;
+      width: 200%;
+      animation: marquee-right 26s linear infinite;
+    }
+    .marquee-container:hover .animate-marquee-left,
+    .marquee-container:hover .animate-marquee-right {
+      animation-play-state: paused;
+    }
+
+    /* Scroll Reveal Transition */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-marquee-left,
+      .animate-marquee-right {
+        animation: none !important;
+        transform: none !important;
+      }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* Button and Card hover lift */
+    .btn-lift {
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .btn-lift:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+    }
+    .btn-lift:active {
+      transform: translateY(0px) scale(0.98);
+    }
+
+    .card-lift {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body class="selection:bg-limeHighlight selection:text-deepGreen antialiased pb-20 sm:pb-0">
+
+  <!-- 1. TOP BAR -->
+  <header class="sticky top-0 z-50 bg-deepGreen/95 backdrop-blur-md border-b border-deepGreenLight">
+    <div class="max-w-6xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3">
+        <img
+          src="logo.png"
+          alt="Quickport AI logo"
+          width="40"
+          height="40"
+          class="w-10 h-10 object-contain rounded-xl bg-white/10 p-1"
+          onerror="this.onerror=null; this.src='https://placehold.co/80x80/0F2A22/C8F26B?text=Q';"
+        />
+        <span class="font-heading font-bold text-lg sm:text-xl text-white tracking-tight">
+          Quickport AI
+        </span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm text-offWhite/80 font-medium">
+        <a href="#what-changes" class="hover:text-limeHighlight transition-colors">What changes</a>
+        <a href="#sample-builds" class="hover:text-limeHighlight transition-colors">Sample builds</a>
+        <a href="#calculator" class="hover:text-limeHighlight transition-colors">Missed demo cost</a>
+        <a href="#how-it-works" class="hover:text-limeHighlight transition-colors">How it works</a>
+        <a href="#questions" class="hover:text-limeHighlight transition-colors">Questions</a>
+      </nav>
+
+      <!-- Pill Button -->
+      <div>
+        <a
+          href="https://cal.com/quickportai/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-lift inline-block bg-limeHighlight text-deepGreen font-semibold text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5 rounded-full"
+        >
+          Free audit call
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO -->
+  <section class="relative bg-deepGreen text-white pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
+    <!-- Highlight glow background -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-80 sm:w-[540px] h-80 sm:h-[400px] bg-limeHighlight/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-left reveal-on-scroll">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-deepGreenLight border border-limeHighlight/20 text-limeHighlight text-xs font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-limeHighlight"></span>
+            For Tuition and coaching centres in Mumbai
+          </div>
+
+          <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+            Stop losing parents to the tuition centre that replied first.
+          </h1>
+
+          <p class="text-base sm:text-xl text-offWhite/80 leading-relaxed font-normal">
+            We set up an automated WhatsApp reply that answers parent questions on fees and batch timings the same evening and books their demo slot.
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+            <a
+              href="https://cal.com/quickportai/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-lift bg-limeHighlight text-deepGreen font-bold text-base px-7 py-4 rounded-full text-center shadow-md"
+            >
+              Book a free audit call
+            </a>
+            <a
+              href="https://wa.me/919967870887"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-lift bg-deepGreenLight hover:bg-deepGreenLight/90 text-white border border-limeHighlight/30 font-medium text-base px-6 py-4 rounded-full text-center flex items-center justify-center gap-2"
+            >
+              <svg class="w-4 h-4 fill-current text-limeHighlight" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.83.824 2.79.825l.001.001c3.182 0 5.768-2.586 5.769-5.766 0-3.18-2.587-5.766-5.769-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.741 0-3.376-.449-4.814-1.233l-5.186 1.359 1.385-5.06c-.886-1.503-1.385-3.24-1.385-5.066 0-5.514 4.486-10 10-10s10 4.486 10 10z"/>
+              </svg>
+              Message on WhatsApp
+            </a>
+          </div>
+
+          <p class="text-xs text-offWhite/60 pt-1">
+            Free 1:1 call. You leave with a plan to grow your coaching centre with AI.
+          </p>
+        </div>
+
+        <!-- Phone WhatsApp Simulation -->
+        <div class="lg:col-span-5 flex flex-col items-center reveal-on-scroll">
+          <div class="w-full max-w-[340px] bg-deepGreenDark rounded-[36px] p-3.5 border-4 border-deepGreenLight shadow-2xl">
+            <!-- Chat Header -->
+            <div class="bg-deepGreenLight rounded-2xl p-3 text-white mb-3">
+              <div class="flex items-center justify-between mb-2 pb-2 border-b border-deepGreen">
+                <span class="text-[11px] font-semibold text-limeHighlight bg-deepGreen px-2.5 py-1 rounded-full">
+                  The Evening Reply Fix
+                </span>
+                <span class="text-[10px] text-offWhite/60">WhatsApp Business</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-limeHighlight text-deepGreen flex items-center justify-center font-bold text-xs">
+                  Q
+                </div>
+                <div>
+                  <p class="text-xs font-bold leading-none">Your Tuition Desk</p>
+                  <p class="text-[10px] text-limeHighlight mt-0.5">Online • Mumbai</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chat-messages-container" class="space-y-2.5 min-h-[290px] flex flex-col justify-end text-xs p-1">
+              <div class="bg-deepGreenLight text-offWhite p-3 rounded-2xl rounded-bl-sm self-start max-w-[85%] leading-relaxed">
+                Namaste sir, what are the fees and batch timings for Class 10 CBSE Maths?
+              </div>
+              <div class="bg-limeHighlight text-deepGreen font-medium p-3 rounded-2xl rounded-br-sm self-end max-w-[85%] leading-relaxed shadow-sm">
+                Namaste. For Class 10 CBSE Maths, we run batches at 5:00 PM and 6:30 PM. Would you like to reserve a free demo seat this Thursday at 5:00 PM?
+              </div>
+              <div class="bg-deepGreenLight text-offWhite p-3 rounded-2xl rounded-bl-sm self-start max-w-[85%] leading-relaxed">
+                Yes please, Thursday 5 PM works for us.
+              </div>
+              <div class="bg-limeHighlight text-deepGreen font-medium p-3 rounded-2xl rounded-br-sm self-end max-w-[85%] leading-relaxed shadow-sm">
+                Your demo slot is confirmed for Thursday at 5:00 PM. We just sent the centre address and syllabus outline to your WhatsApp.
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-offWhite/50 mt-3 text-center">
+            Example chat
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. MARQUEE -->
+  <section class="bg-deepGreenDark py-5 border-y border-deepGreenLight overflow-hidden select-none marquee-container">
+    <div class="flex flex-col gap-3">
+      <!-- Row 1 -->
+      <div class="overflow-hidden flex">
+        <div class="animate-marquee-left flex items-center shrink-0">
+          <div class="flex items-center gap-8 px-4 shrink-0">
+            <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">The Evening Reply Fix</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">The Evening Reply Fix</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">The Evening Reply Fix</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">The Evening Reply Fix</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-limeHighlight shrink-0"></span>
+          </div>
+          <div class="flex items-center gap-8 px-4 shrink-0">
+            <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">The Evening Reply Fix</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">The Evening Reply Fix</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">The Evening Reply Fix</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">The Evening Reply Fix</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-limeHighlight shrink-0"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="overflow-hidden flex">
+        <div class="animate-marquee-right flex items-center shrink-0">
+          <div class="flex items-center gap-8 px-4 shrink-0 text-xs sm:text-sm font-body font-semibold uppercase tracking-widest text-offWhite/60">
+            <span>FOR TUITION AND COACHING CENTRES</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>MUMBAI</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>RUNS ON YOUR WHATSAPP</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>FOR TUITION AND COACHING CENTRES</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>MUMBAI</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>RUNS ON YOUR WHATSAPP</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+          </div>
+          <div class="flex items-center gap-8 px-4 shrink-0 text-xs sm:text-sm font-body font-semibold uppercase tracking-widest text-offWhite/60">
+            <span>FOR TUITION AND COACHING CENTRES</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>MUMBAI</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>RUNS ON YOUR WHATSAPP</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>FOR TUITION AND COACHING CENTRES</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>MUMBAI</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+            <span>RUNS ON YOUR WHATSAPP</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-limeHighlight shrink-0"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHAT CHANGES FOR YOU -->
+  <section id="what-changes" class="py-20 sm:py-28 max-w-6xl mx-auto px-4">
+    <div class="max-w-2xl mb-12 reveal-on-scroll">
+      <h2 class="font-heading text-2xl sm:text-4xl font-bold tracking-tight text-deepGreen">
+        What changes for you
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="card-lift bg-white p-8 rounded-24 border border-deepGreen/10 shadow-sm reveal-on-scroll">
+        <div class="w-14 h-14 rounded-2xl bg-limeHighlight flex items-center justify-center text-deepGreen mb-6">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-deepGreen mb-3">
+          Your evening enquiries turn into booked demo slots.
+        </h3>
+        <p class="text-sm text-deepGreen/80 leading-relaxed">
+          Parents browse coaching classes after work. When they message your WhatsApp at 8 PM, they receive polite fee and schedule details instantly, followed by an immediate invitation to reserve a demo class seat.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card-lift bg-white p-8 rounded-24 border border-deepGreen/10 shadow-sm reveal-on-scroll">
+        <div class="w-14 h-14 rounded-2xl bg-limeHighlight flex items-center justify-center text-deepGreen mb-6">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-deepGreen mb-3">
+          Your staff stops copying and pasting fee charts.
+        </h3>
+        <p class="text-sm text-deepGreen/80 leading-relaxed">
+          Instead of typing the same standard answers all day or missing messages during evening teaching hours, your WhatsApp handles questions automatically while keeping your exact terms intact.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card-lift bg-white p-8 rounded-24 border border-deepGreen/10 shadow-sm reveal-on-scroll">
+        <div class="w-14 h-14 rounded-2xl bg-limeHighlight flex items-center justify-center text-deepGreen mb-6">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl font-bold text-deepGreen mb-3">
+          You review and approve every single answer first.
+        </h3>
+        <p class="text-sm text-deepGreen/80 leading-relaxed">
+          Our team writes the replies with you in your exact words. You review and check every fee bracket, subject, and timing rule once before anything goes live on your phone number.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SAMPLE BUILDS -->
+  <section id="sample-builds" class="py-20 bg-deepGreen text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-2xl mb-14 reveal-on-scroll">
+        <span class="text-limeHighlight text-xs font-bold uppercase tracking-wider">
+          Inside your coaching centre
+        </span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold mt-2">
+          Sample builds
+        </h2>
+      </div>
+
+      <!-- Row 1: work-1.jpg on Left -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-deepGreenLight rounded-24 p-6 sm:p-10 mb-10 border border-white/5 reveal-on-scroll">
+        <div class="lg:col-span-6 relative">
+          <div class="aspect-[3/2] w-full rounded-2xl overflow-hidden bg-deepGreenDark relative">
+            <img
+              src="work-1.jpg"
+              alt="Front desk of a Mumbai tuition centre with a staff member smiling at their phone"
+              width="600"
+              height="400"
+              class="w-full h-full object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&h=400&q=80';"
+            />
+          </div>
+          <!-- Coded notification bubble overlapping corner -->
+          <div class="absolute -bottom-3 -right-3 bg-deepGreen border border-limeHighlight/30 p-3 rounded-xl shadow-lg max-w-[210px]">
+            <p class="text-[10px] text-limeHighlight font-bold uppercase tracking-wider">Front desk notification</p>
+            <p class="text-xs text-offWhite font-medium">Demo booked for Grade 10 batch</p>
+          </div>
+        </div>
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-limeHighlight">
+            Sample build
+          </span>
+          <h3 class="font-heading text-2xl font-bold">
+            The Front Desk Evening Flow
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div>
+              <h4 class="font-bold text-white mb-1">What you get</h4>
+              <p class="text-offWhite/80 leading-relaxed">
+                A connected WhatsApp assistant that greets evening enquiries, provides class fee schedules, and collects student details without delays.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-white mb-1">What changes for you</h4>
+              <p class="text-offWhite/80 leading-relaxed">
+                Your morning starts with organized student rosters and confirmed demos instead of dozens of unread messages from frustrated parents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: work-2.jpg on Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-deepGreenLight rounded-24 p-6 sm:p-10 mb-10 border border-white/5 reveal-on-scroll">
+        <div class="lg:col-span-6 space-y-6 order-2 lg:order-1">
+          <span class="text-xs font-bold uppercase tracking-widest text-limeHighlight">
+            Sample build
+          </span>
+          <h3 class="font-heading text-2xl font-bold">
+            The Centre Owner Evening Digest
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div>
+              <h4 class="font-bold text-white mb-1">What you get</h4>
+              <p class="text-offWhite/80 leading-relaxed">
+                A concise evening summary sent directly to your WhatsApp with every parent enquiry handled and every demo scheduled while you were teaching.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-white mb-1">What changes for you</h4>
+              <p class="text-offWhite/80 leading-relaxed">
+                You monitor branch admissions directly from your phone without micromanaging staff or logging into complex systems.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-6 relative order-1 lg:order-2">
+          <div class="aspect-[3/2] w-full rounded-2xl overflow-hidden bg-deepGreenDark relative">
+            <img
+              src="work-2.jpg"
+              alt="Tuition centre owner in Mumbai glancing at their phone between batches"
+              width="600"
+              height="400"
+              class="w-full h-full object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&h=400&q=80';"
+            />
+          </div>
+          <!-- Coded notification bubble overlapping corner -->
+          <div class="absolute -bottom-3 -left-3 bg-deepGreen border border-limeHighlight/30 p-3 rounded-xl shadow-lg max-w-[210px]">
+            <p class="text-[10px] text-limeHighlight font-bold uppercase tracking-wider">Owner digest</p>
+            <p class="text-xs text-offWhite font-medium">Batch occupancy updated</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: work-3.jpg on Left -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-deepGreenLight rounded-24 p-6 sm:p-10 border border-white/5 reveal-on-scroll">
+        <div class="lg:col-span-6 relative">
+          <div class="aspect-[3/2] w-full rounded-2xl overflow-hidden bg-deepGreenDark relative">
+            <img
+              src="work-3.jpg"
+              alt="Happy parent leaving tuition centre with phone in hand"
+              width="600"
+              height="400"
+              class="w-full h-full object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&h=400&q=80';"
+            />
+          </div>
+          <!-- Coded notification bubble overlapping corner -->
+          <div class="absolute -bottom-3 -right-3 bg-deepGreen border border-limeHighlight/30 p-3 rounded-xl shadow-lg max-w-[210px]">
+            <p class="text-[10px] text-limeHighlight font-bold uppercase tracking-wider">Parent confirmation</p>
+            <p class="text-xs text-offWhite font-medium">Demo slot locked on WhatsApp</p>
+          </div>
+        </div>
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-limeHighlight">
+            Sample build
+          </span>
+          <h3 class="font-heading text-2xl font-bold">
+            The Demo Seat Confirmation
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div>
+              <h4 class="font-bold text-white mb-1">What you get</h4>
+              <p class="text-offWhite/80 leading-relaxed">
+                An automatic WhatsApp confirmation and location pin sent to parents the moment their demo slot is chosen.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-white mb-1">What changes for you</h4>
+              <p class="text-offWhite/80 leading-relaxed">
+                Parents show up on time because they have the centre location, syllabus details, and scheduled slot directly in their chat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. PROOF (CALCULATOR) -->
+  <section id="calculator" class="py-20 sm:py-28 max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12 reveal-on-scroll">
+      <h2 class="font-heading text-2xl sm:text-4xl font-bold text-deepGreen tracking-tight">
+        What missed demo slots cost you
+      </h2>
+    </div>
+
+    <div class="bg-white p-6 sm:p-10 rounded-24 border border-deepGreen/10 shadow-lg space-y-8 reveal-on-scroll">
+      <p class="text-xs font-bold uppercase tracking-widest text-deepGreen/60">
+        Your numbers
+      </p>
+
+      <!-- Slider 1 -->
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-semibold">
+          <span>Enquiries a month</span>
+          <span id="enquiries-val" class="font-mono text-base text-deepGreen">80</span>
+        </div>
+        <input
+          id="enquiries-slider"
+          type="range"
+          min="20"
+          max="300"
+          step="5"
+          value="80"
+          class="w-full h-2 bg-offWhite rounded-lg appearance-none cursor-pointer accent-deepGreen"
+        />
+      </div>
+
+      <!-- Slider 2 -->
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-semibold">
+          <span>The share who miss their demo slot</span>
+          <span id="share-val" class="font-mono text-base text-deepGreen">35%</span>
+        </div>
+        <input
+          id="share-slider"
+          type="range"
+          min="10"
+          max="70"
+          step="5"
+          value="35"
+          class="w-full h-2 bg-offWhite rounded-lg appearance-none cursor-pointer accent-deepGreen"
+        />
+      </div>
+
+      <!-- Slider 3 -->
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-semibold">
+          <span>Average monthly bill per student</span>
+          <span id="bill-val" class="font-mono text-base text-deepGreen">₹3,500</span>
+        </div>
+        <input
+          id="bill-slider"
+          type="range"
+          min="1000"
+          max="15000"
+          step="500"
+          value="3500"
+          class="w-full h-2 bg-offWhite rounded-lg appearance-none cursor-pointer accent-deepGreen"
+        />
+      </div>
+
+      <!-- Live Calculation Display -->
+      <div class="pt-6 border-t border-offWhite grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-offWhite p-6 rounded-2xl text-center">
+          <p class="text-xs text-deepGreen/70 font-semibold mb-1">Money lost a month</p>
+          <p id="monthly-loss" class="font-heading text-3xl sm:text-4xl font-bold text-deepGreen">
+            ₹98,000
+          </p>
+        </div>
+        <div class="bg-deepGreen text-white p-6 rounded-2xl text-center">
+          <p class="text-xs text-limeHighlight font-semibold mb-1">Money lost a year</p>
+          <p id="yearly-loss" class="font-heading text-3xl sm:text-4xl font-bold text-limeHighlight">
+            ₹11,76,000
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center pt-2 space-y-4">
+        <p class="text-xs text-deepGreen/60">
+          Your estimate. We go through it on the free audit call.
+        </p>
+        <div>
+          <a
+            href="https://cal.com/quickportai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-lift inline-block bg-limeHighlight text-deepGreen font-bold text-base px-8 py-4 rounded-full shadow-md"
+          >
+            Book a free audit call
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 bg-white border-y border-deepGreen/10">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16 reveal-on-scroll">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-deepGreen">
+          How it works
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <!-- Connecting highlight line (desktop) -->
+        <div class="hidden md:block absolute top-14 left-[15%] right-[15%] h-0.5 bg-limeHighlight -z-0"></div>
+
+        <!-- Step 1 -->
+        <div class="relative z-10 flex flex-col items-center text-center p-6 reveal-on-scroll">
+          <div class="w-16 h-16 rounded-full bg-deepGreen text-limeHighlight font-heading font-bold text-xl flex items-center justify-center mb-6 shadow-md border-4 border-white">
+            1
+          </div>
+          <h3 class="font-heading text-xl font-bold text-deepGreen mb-2">
+            Book your free audit call
+          </h3>
+          <p class="text-sm text-deepGreen/70 leading-relaxed">
+            Pick a 30-minute slot on Cal.com that works for your schedule.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative z-10 flex flex-col items-center text-center p-6 reveal-on-scroll">
+          <div class="w-16 h-16 rounded-full bg-deepGreen text-limeHighlight font-heading font-bold text-xl flex items-center justify-center mb-6 shadow-md border-4 border-white">
+            2
+          </div>
+          <h3 class="font-heading text-xl font-bold text-deepGreen mb-2">
+            Get your plan
+          </h3>
+          <p class="text-sm text-deepGreen/70 leading-relaxed">
+            We review your student enrolment drop-offs and draft your custom reply logic.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative z-10 flex flex-col items-center text-center p-6 reveal-on-scroll">
+          <div class="w-16 h-16 rounded-full bg-deepGreen text-limeHighlight font-heading font-bold text-xl flex items-center justify-center mb-6 shadow-md border-4 border-white">
+            3
+          </div>
+          <h3 class="font-heading text-xl font-bold text-deepGreen mb-2">
+            We set it up on your WhatsApp
+          </h3>
+          <p class="text-sm text-deepGreen/70 leading-relaxed">
+            Our team connects everything to your number and tests it before launch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FOUNDER (TEAM PORTRAIT) -->
+  <section class="py-20 max-w-4xl mx-auto px-4">
+    <div class="card-lift bg-white rounded-24 p-8 sm:p-12 border border-deepGreen/10 shadow-sm flex flex-col md:flex-row items-center gap-8 reveal-on-scroll">
+      <!-- 4:5 Highlight Tile with Logo Mark -->
+      <div class="w-48 sm:w-56 aspect-[4/5] rounded-24 bg-limeHighlight flex flex-col items-center justify-center p-6 text-center text-deepGreen shadow-inner shrink-0">
+        <img
+          src="logo.png"
+          alt="Quickport AI logo mark"
+          width="80"
+          height="80"
+          class="w-20 h-20 object-contain mb-4"
+          onerror="this.onerror=null; this.src='https://placehold.co/120x120/0F2A22/C8F26B?text=Q';"
+        />
+        <p class="font-heading font-bold text-lg leading-tight">
+          Quickport AI
+        </p>
+        <p class="text-[11px] uppercase tracking-wider font-semibold opacity-70 mt-1">
+          Team Mumbai
+        </p>
+      </div>
+
+      <div class="space-y-4 text-center md:text-left">
+        <div>
+          <h3 class="font-heading text-2xl font-bold text-deepGreen">
+            Quickport AI Team
+          </h3>
+          <p class="text-sm font-semibold text-deepGreen/60">
+            Founder, Quickport AI
+          </p>
+        </div>
+
+        <p class="text-sm text-deepGreen/80 leading-relaxed">
+          We help Tutors, coaching class owners, schools to manage leads.
+        </p>
+
+        <div class="pt-2">
+          <a
+            href="https://cal.com/quickportai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-lift inline-block bg-deepGreen text-white font-semibold text-sm px-6 py-3.5 rounded-full"
+          >
+            Book a free call with our team
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FREE AUDIT CALL (DARK PANEL) -->
+  <section class="py-20 bg-deepGreen text-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-deepGreenLight border border-limeHighlight/20 rounded-24 p-8 sm:p-14 text-center space-y-8 reveal-on-scroll">
+        <h2 class="font-heading text-2xl sm:text-4xl font-bold tracking-tight text-white max-w-2xl mx-auto">
+          Get your AI growth plan in a free 1:1 call
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left pt-2">
+          <div class="bg-deepGreen/80 p-5 rounded-2xl border border-white/5">
+            <div class="w-6 h-6 rounded-full bg-limeHighlight text-deepGreen flex items-center justify-center font-bold text-xs mb-3">✓</div>
+            <h4 class="font-bold text-sm text-white mb-1">Where you lose parents today</h4>
+            <p class="text-xs text-offWhite/70 leading-relaxed">Pinpoint where admission enquiries drop off outside working hours.</p>
+          </div>
+
+          <div class="bg-deepGreen/80 p-5 rounded-2xl border border-white/5">
+            <div class="w-6 h-6 rounded-full bg-limeHighlight text-deepGreen flex items-center justify-center font-bold text-xs mb-3">✓</div>
+            <h4 class="font-bold text-sm text-white mb-1">What to automate first</h4>
+            <p class="text-xs text-offWhite/70 leading-relaxed">The high-impact fee and batch timing answers to put on WhatsApp.</p>
+          </div>
+
+          <div class="bg-deepGreen/80 p-5 rounded-2xl border border-white/5">
+            <div class="w-6 h-6 rounded-full bg-limeHighlight text-deepGreen flex items-center justify-center font-bold text-xs mb-3">✓</div>
+            <h4 class="font-bold text-sm text-white mb-1">A clear price for your business</h4>
+            <p class="text-xs text-offWhite/70 leading-relaxed">A straightforward implementation cost based on your centre needs.</p>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <a
+            href="https://cal.com/quickportai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-lift inline-block bg-limeHighlight text-deepGreen font-bold text-base px-8 py-4 rounded-full shadow-xl"
+          >
+            Book a free audit call
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. QUESTIONS (ACCORDION) -->
+  <section id="questions" class="py-20 sm:py-28 max-w-3xl mx-auto px-4">
+    <div class="text-center mb-12 reveal-on-scroll">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-deepGreen">
+        Questions
+      </h2>
+    </div>
+
+    <div class="space-y-4 reveal-on-scroll">
+      <!-- Question 1 -->
+      <div class="bg-white rounded-2xl border border-deepGreen/10 overflow-hidden">
+        <button onclick="toggleAccordion('faq-1', 'icon-1')" class="w-full p-5 text-left font-heading font-bold text-deepGreen flex items-center justify-between gap-4">
+          <span>Who is this for?</span>
+          <span id="icon-1" class="text-lg transition-transform duration-200">+</span>
+        </button>
+        <div id="faq-1" class="hidden px-5 pb-5 text-sm text-deepGreen/80 leading-relaxed border-t border-offWhite pt-3">
+          This is for tuition and coaching centres in Mumbai that receive parent enquiries on fees and batch timings and want to book demo slots without losing them to faster centres.
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="bg-white rounded-2xl border border-deepGreen/10 overflow-hidden">
+        <button onclick="toggleAccordion('faq-2', 'icon-2')" class="w-full p-5 text-left font-heading font-bold text-deepGreen flex items-center justify-between gap-4">
+          <span>What does it cost?</span>
+          <span id="icon-2" class="text-lg transition-transform duration-200">+</span>
+        </button>
+        <div id="faq-2" class="hidden px-5 pb-5 text-sm text-deepGreen/80 leading-relaxed border-t border-offWhite pt-3">
+          It depends on your business. You get your custom plan and an exact price on the free audit call.
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="bg-white rounded-2xl border border-deepGreen/10 overflow-hidden">
+        <button onclick="toggleAccordion('faq-3', 'icon-3')" class="w-full p-5 text-left font-heading font-bold text-deepGreen flex items-center justify-between gap-4">
+          <span>What do you set up?</span>
+          <span id="icon-3" class="text-lg transition-transform duration-200">+</span>
+        </button>
+        <div id="faq-3" class="hidden px-5 pb-5 text-sm text-deepGreen/80 leading-relaxed border-t border-offWhite pt-3">
+          We set up The Evening Reply Fix for Mumbai tuition centres: a WhatsApp reply that answers parent questions on fees and batch timings the same evening and books the demo slot. Our team writes the answers with you, and you check it once before launch.
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="bg-white rounded-2xl border border-deepGreen/10 overflow-hidden">
+        <button onclick="toggleAccordion('faq-4', 'icon-4')" class="w-full p-5 text-left font-heading font-bold text-deepGreen flex items-center justify-between gap-4">
+          <span>How do we start?</span>
+          <span id="icon-4" class="text-lg transition-transform duration-200">+</span>
+        </button>
+        <div id="faq-4" class="hidden px-5 pb-5 text-sm text-deepGreen/80 leading-relaxed border-t border-offWhite pt-3">
+          Click any button on this page to book your free 30-minute audit call with our team.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. CLOSING & FOOTER -->
+  <section class="relative py-28 bg-deepGreen text-white overflow-hidden">
+    <!-- place.jpg under dark color layer -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="place.jpg"
+        alt="Wide calm view inside a tuition and coaching centre in Mumbai"
+        width="1200"
+        height="800"
+        class="w-full h-full object-cover opacity-20"
+        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&h=800&q=80';"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-deepGreen via-deepGreen/85 to-deepGreen"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-8 reveal-on-scroll">
+      <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white max-w-2xl mx-auto leading-tight">
+        Stop losing parents to the tuition centre that replied first.
+      </h2>
+
+      <div>
+        <a
+          href="https://cal.com/quickportai/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-lift inline-block bg-limeHighlight text-deepGreen font-bold text-base px-8 py-4 rounded-full shadow-xl"
+        >
+          Book a free audit call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-deepGreenDark border-t border-deepGreenLight py-12 text-offWhite/70 text-xs">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img
+          src="logo.png"
+          alt="Quickport AI logo"
+          width="32"
+          height="32"
+          class="w-8 h-8 object-contain rounded-lg bg-white/10 p-1"
+          onerror="this.onerror=null; this.src='https://placehold.co/64x64/0F2A22/C8F26B?text=Q';"
+        />
+        <span class="font-heading font-bold text-white text-base">
+          Quickport AI
+        </span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <span>Mumbai</span>
+        <a
+          href="https://wa.me/919967870887"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-limeHighlight transition-colors flex items-center gap-1.5 font-medium"
+        >
+          <svg class="w-3.5 h-3.5 fill-current text-limeHighlight" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.83.824 2.79.825l.001.001c3.182 0 5.768-2.586 5.769-5.766 0-3.18-2.587-5.766-5.769-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.741 0-3.376-.449-4.814-1.233l-5.186 1.359 1.385-5.06c-.886-1.503-1.385-3.24-1.385-5.066 0-5.514 4.486-10 10-10s10 4.486 10 10z"/>
+          </svg>
+          Message on WhatsApp
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BOTTOM BAR -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-deepGreen/95 backdrop-blur-md border-t border-deepGreenLight flex items-center gap-2">
+    <a
+      href="https://cal.com/quickportai/30min"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-lift flex-1 bg-limeHighlight text-deepGreen font-bold text-sm py-3 rounded-full text-center shadow-md"
+    >
+      Book a free audit call
+    </a>
+    <a
+      href="https://wa.me/919967870887"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-12 h-12 bg-deepGreenLight border border-limeHighlight/30 rounded-full flex items-center justify-center text-limeHighlight shrink-0"
+      aria-label="Message on WhatsApp"
+    >
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.83.824 2.79.825l.001.001c3.182 0 5.768-2.586 5.769-5.766 0-3.18-2.587-5.766-5.769-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.741 0-3.376-.449-4.814-1.233l-5.186 1.359 1.385-5.06c-.886-1.503-1.385-3.24-1.385-5.066 0-5.514 4.486-10 10-10s10 4.486 10 10z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- INTERACTIVE SCRIPTS -->
+  <script>
+    // 1. Live Calculator (Section 6: Proof)
+    const enquiriesSlider = document.getElementById('enquiries-slider');
+    const shareSlider = document.getElementById('share-slider');
+    const billSlider = document.getElementById('bill-slider');
+
+    const enquiriesVal = document.getElementById('enquiries-val');
+    const shareVal = document.getElementById('share-val');
+    const billVal = document.getElementById('bill-val');
+
+    const monthlyLossEl = document.getElementById('monthly-loss');
+    const yearlyLossEl = document.getElementById('yearly-loss');
+
+    function updateCalculator() {
+      const enquiries = parseInt(enquiriesSlider.value, 10);
+      const share = parseInt(shareSlider.value, 10);
+      const bill = parseInt(billSlider.value, 10);
+
+      enquiriesVal.textContent = enquiries;
+      shareVal.textContent = share + '%';
+      billVal.textContent = '₹' + bill.toLocaleString('en-IN');
+
+      const missedCount = Math.round((enquiries * share) / 100);
+      const monthly = missedCount * bill;
+      const yearly = monthly * 12;
+
+      monthlyLossEl.textContent = '₹' + monthly.toLocaleString('en-IN');
+      yearlyLossEl.textContent = '₹' + yearly.toLocaleString('en-IN');
+    }
+
+    enquiriesSlider.addEventListener('input', updateCalculator);
+    shareSlider.addEventListener('input', updateCalculator);
+    billSlider.addEventListener('input', updateCalculator);
+
+    // 2. Accordion Toggle (Section 10: Questions)
+    function toggleAccordion(id, iconId) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById(iconId);
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        icon.textContent = '−';
+      } else {
+        el.classList.add('hidden');
+        icon.textContent = '+';
+      }
+    }
+
+    // 3. Scroll Reveal Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
